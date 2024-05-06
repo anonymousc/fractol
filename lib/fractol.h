@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:40:51 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/06 19:15:11 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:04:29 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ typedef struct s_fracts{
     double   zy;
     double  cy;
     double  cx;
+    double  x_max;
+    double  x_min;
+    double  y_max;
+    double  y_min;
     unsigned long colors;
     int iter;
     double key_x;
@@ -58,9 +62,9 @@ int coloring(int iter);
 t_complex	calculate(t_complex z1);
 double scale(double x, double oldMax, double newMin, double newMax);
 int mandelbrot(t_complex c);
-void pixel_put(t_dat *data, int x, int y, int clr);
-void draw(t_mlx test ,t_dat *img, t_fract *test1);
-int     keycheck(int keycode, t_fract *test);
+void pixel_put(t_mlx *data, int x, int y, int clr);
+void draw(t_mlx *test1);
+int     keycheck(int keycode, t_mlx *test);
 void draw_j(t_dat *img);
 #endif 
 
