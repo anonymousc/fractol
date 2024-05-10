@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:40:51 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/06 21:04:29 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/10 22:40:24 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <mlx.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 typedef struct s_complex{
     double real;
@@ -56,15 +57,33 @@ typedef struct s_mlx{
 
 #define H 800
 #define W 800
-
+ int checker_map(t_mlx * test ,char *s);
 void init(void);
 int coloring(int iter);
 t_complex	calculate(t_complex z1);
 double scale(double x, double oldMax, double newMin, double newMax);
 int mandelbrot(t_complex c);
+int julia(t_complex *z, double real, double imagin);
 void pixel_put(t_mlx *data, int x, int y, int clr);
-void draw(t_mlx *test1);
+void draw_m(t_mlx *test1);
 int     keycheck(int keycode, t_mlx *test);
-void draw_j(t_dat *img);
+void draw_j(t_mlx *test1, double real, double imagine);
+void window_j(t_mlx *vars, char **av, double real, double imagine);
+void window_m(t_mlx *vars, char **av);
+int mouse(int keycode,int x, int y,  t_mlx *test);
+void	render_fracts(t_mlx *test);
+double get_x_value(double x_max, double x_min);
+double get_y_value(double y_max, double y_min);
+double ft_atoi(char *str);
+int c(void);
+int parser(int ac ,char **av);
+void run(char **av);
+int ft_strcmp(char *s1, char *s2);
+double ft_atoi(char *str);
+void	render_fracts_j(t_mlx *test);
+int mousej(int keycode,int x, int y,  t_mlx *test);
+int     keycheckj(int keycode, t_mlx *test);
+int	ft_atof(const char *s, double *arg);
+
 #endif 
 
