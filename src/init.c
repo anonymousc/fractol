@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:55:34 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/10 20:50:24 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:45:20 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	render_fracts(t_mlx *test)
 {
-
-	mlx_destroy_image(test->mlx, test->test.im);
-	test->test.im = mlx_new_image(test->mlx, W, H);
+//	mlx_destroy_image(test->mlx, test->test.im);
+//	test->test.im = mlx_new_image(test->mlx, W, H);
 	draw_m(test);
 	mlx_put_image_to_window(test->mlx, test->mlx_w, test->test.im, 0, 0);
 }
 void	render_fracts_j(t_mlx *test)
 {
-	double real;
-	double imag;
-	mlx_destroy_image(test->mlx, test->test.im);
-	test->test.im = mlx_new_image(test->mlx, W, H);
-	draw_j(test, real , imag);
+	//mlx_clear_window(test->mlx, test->mlx_w);
+	printf("test->mlx --> %p test->mlx_w --> %p\n", test->mlx, test->mlx_w);
+	//test->test.im = mlx_new_image(test->mlx, W, H);
+	draw_j(test, test->c_real , test->c_imag);
 	mlx_put_image_to_window(test->mlx, test->mlx_w, test->test.im, 0, 0);
 }
 double get_x_value(double x_max, double x_min)

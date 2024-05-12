@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:40:51 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/10 22:40:24 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:43:39 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_mlx{
     void *mlx;
     void *mlx_w;
     t_dat test;
+    double c_real;
+    double c_imag;
     
 }   t_mlx;
 

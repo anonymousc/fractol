@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 01:36:01 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/10 22:45:08 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:44:29 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,20 @@ void run(char **av)
 }
 int main(int ac, char **av)
 {
-	if(ac == 2)
-      run(av);
-	if(ac == 4)
+	t_mlx var;
+	var.fracts.x_max = 2;
+	var.fracts.x_min = -2;
+	var.fracts.y_max = 2;
+	var.fracts.y_min = -2;
+	if(ac == 2 && !ft_strcmp(av[1], "mandelbrot"))
+		window_m(&var, av);
+	if(ac == 4 && !ft_strcmp(av[1], "julia"))
 	{
-		if(ac == 2)
+		if (!ft_atof(av[2], &var.c_real) || !ft_atof(av[3], &var.c_imag))
 		{
-			exit(1);
+			printf("ERROR\n");
+			exit(-1); 
 		}
-		run(av);
+		window_j(&var, av, var.c_real, var.c_imag);
 	}
 }

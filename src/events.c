@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 07:33:09 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/10 22:48:38 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:46:05 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ int mousej(int keycode,int x, int y,  t_mlx *test)
 		test->fracts.y_max += zoom_ratio_y;
 		test->fracts.y_min -= zoom_ratio_y;
 	}
-		if (keycode == 5)
+	if (keycode == 5)
 	{
 		test->fracts.x_max -= zoom_ratio_x;
 		test->fracts.x_min += zoom_ratio_x;

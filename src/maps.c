@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 21:50:05 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/10 21:01:32 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:28:43 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ int julia(t_complex *z, double real, double imagin)
 {
 	t_complex c;
 	t_fract fracts;
+
 	c.real =  real;
 	c.imag = imagin;
 	int i = 0;
-	fracts.iter = 35;
+	fracts.iter = 100;
 	double tmp;
 	while (i < fracts.iter)
 	{
@@ -43,10 +44,11 @@ int julia(t_complex *z, double real, double imagin)
 {
 	t_fract fracts;
 	t_complex z;
+
 	z.imag = 0;
 	z.real = 0;
 	int i = 0;
-	fracts.iter = 35;
+	fracts.iter = 100;
 	double tmp;
 	while (i < fracts.iter)
 	{
@@ -65,6 +67,7 @@ int burning_ship(t_complex c)
 {
 	t_fract fracts;
 	t_complex z;
+
 	z.imag = 0;
 	z.real = 0;
 	int i = 0;
