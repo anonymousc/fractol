@@ -34,4 +34,4 @@ The program allows you to navigate and zoom into different regions of the Mandel
 - [MLX Documentation](https://harm-smits.github.io/42docs/libs/minilibx.html)
 
 ## License
-This project is licensed under [Cz4r](https://github.com/anonymousc/fractol/).
+This project is licensed under [Cz4r](https://github.com/anonymousc).
