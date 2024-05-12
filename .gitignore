@@ -1,4 +1,4 @@
 .vscode
 a.*
 fractol
-fractol.dSYM
+*.dSYM/*
