@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 09:40:51 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/12 20:36:16 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 21:00:05 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ typedef struct s_mlx
 # define H 800
 # define W 800
 
-int					checker_map(t_mlx *test, char *s);
-void				init(void);
 int					coloring(int iter);
 t_complex			calculate(t_complex z1);
 double				scale(double x, double oldMax, double newMin,
@@ -82,12 +80,8 @@ int					mouse(int keycode, int x, int y, t_mlx *test);
 void				render_fracts(t_mlx *test);
 double				get_x_value(double x_max, double x_min);
 double				get_y_value(double y_max, double y_min);
-double				ft_atoi(char *str);
 int					c(void);
-int					parser(int ac, char **av);
-void				run(char **av);
 int					ft_strcmp(char *s1, char *s2);
-double				ft_atoi(char *str);
 void				render_fracts_j(t_mlx *test);
 int					mousej(int keycode, int x, int y, t_mlx *test);
 int					keycheckj(int keycode, t_mlx *test);
