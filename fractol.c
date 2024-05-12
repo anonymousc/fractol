@@ -6,7 +6,7 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 01:36:01 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/12 20:53:27 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 21:08:18 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	{
 		if (!ft_atof(av[2], &var.c_real) || !ft_atof(av[3], &var.c_imag))
 		{
-			write(2, "Missing args\n", 14);
+			write(2, "\033[31mMissing args or Invalid args\n", 36);
 			exit(1);
 		}
 		window_j(&var, av, var.c_real, var.c_imag);
