@@ -6,44 +6,23 @@
 /*   By: aessadik <aessadik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 01:28:19 by aessadik          #+#    #+#             */
-/*   Updated: 2024/05/12 18:23:46 by aessadik         ###   ########.fr       */
+/*   Updated: 2024/05/12 20:02:48 by aessadik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/fractol.h"
 #include <string.h>
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    while (*s1 == *s2 && *s1 && *s2)
-    {
-        s1++;
-        s2++;
-    }
-    return(*s1 - *s2);
+	while (*s1 == *s2 && *s1 && *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
-double ft_atoi(char *str)
-{
-   double res;
-   int s = 1;
-    int i;
-    printf("STR___ %s\n", str);
-    if (!str)
-        return (0);
-    while ((str[i] && str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-        i++;
-    if(str[i] == '+' || str[i] == '-')
-    {
-        if (str[i] == '-')
-            s = -s;
-    }
-    while (str[i] >= '0' && str[i] <= '9')
-    {
-        res = res * 10 + (str[i] - '0');
-        i++;
-    }
-    return (res * s);
-}
+
 static int	valid_str(char *s)
 {
 	int	i;
@@ -53,9 +32,7 @@ static int	valid_str(char *s)
 	count = 0;
 	while (s[i])
 	{
-		if (!((s[i] >= '0' && s[i] <= '9')
-				|| s[i] == '.'
-				|| s[i] == '-'
+		if (!((s[i] >= '0' && s[i] <= '9') || s[i] == '.' || s[i] == '-'
 				|| s[i] == '+'))
 			return (0);
 		if (s[i] == '.')
@@ -63,6 +40,20 @@ static int	valid_str(char *s)
 		i++;
 	}
 	return ((count == 1 || count == 0));
+}
+
+static int	sign1(char c, int *i)
+{
+	int	s;
+
+	s = 1;
+	if (c == '-' || c == '+')
+	{
+		if (c == '-')
+			s = -1;
+		i++;
+	}
+	return (s);
 }
 
 int	ft_atof(const char *s, double *arg)
@@ -74,16 +65,10 @@ int	ft_atof(const char *s, double *arg)
 
 	if (!valid_str((char *)s))
 		return (0);
-	sign = 1;
 	flag = 0;
 	dec = 0.1;
 	i = 0;
-	if (s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
-			sign = -1;
-		i++;
-	}
+	sign = sign1(s[i], &i);
 	while (s[i])
 	{
 		if (flag == 0 && (s[i] >= '0' && s[i] <= '9'))
